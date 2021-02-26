@@ -21,7 +21,7 @@ def input_students
   # while the name is not empty, repeat this code
   while !name.empty? do
   # add the student hash to the array
-    if name.start_with?("S")
+    if name.start_with?("S") && name.size < 12
       students << {name: name, cohort: :november}
       puts "Now we have #{students.count} students"
     end

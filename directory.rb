@@ -30,8 +30,8 @@ def input_students
   students
 end
 
-# nothing happens until we call the methods
 students = input_students
+# nothing happens until we call the methods
 print_header
 print(students)
 print_footer(students)

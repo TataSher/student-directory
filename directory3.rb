@@ -12,17 +12,15 @@ def print_footer(names)
 end
 
 def input_students
-  puts "Please enter the name of the student"
+  puts "Please enter the name and cohort of the student"
   puts "To finish, just hit return twice"
   # create an empty array
   students = []
   # get the first name
-  name = gets.chomp
-  puts "Please enter the cohort of the student"
-  puts "To finish, just hit return twice"
-  cohort = gets.chomp
+  info = gets.chomp
+  name = info.split[0]
+  cohort = info.split[1]
   puts "Please enter the hobby of the student"
-  puts "To finish, just hit return twice"
   hobby = gets.chomp
   # while the name is not empty, repeat this code
   while !name.empty? do

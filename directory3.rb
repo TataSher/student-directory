@@ -1,14 +1,14 @@
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The students of Villains Academy".center(100)
+  puts "-------------".center(100)
 end
 def print(students)
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort) hobby:#{student[:hobby]}"
+    puts "#{student[:name]} (#{student[:cohort]} cohort) hobby: #{student[:hobby]}".center(100)
   end
 end
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students".center(100)
 end
 
 def input_students

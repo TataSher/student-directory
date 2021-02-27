@@ -2,9 +2,12 @@ def print_header
   puts "The students of Villains Academy"
   puts "-------------"
 end
+
 def print(students)
-  students.each_with_index do |student, number|
-    puts "#{number + 1} #{student[:name]} (#{student[:cohort]} cohort)"
+  n = 0
+  while students.count > n do
+      puts "#{students[n][:name]} #{students[n][:cohort]} cohort"
+      n += 1
   end
 end
 def print_footer(names)
@@ -21,10 +24,9 @@ def input_students
   # while the name is not empty, repeat this code
   while !name.empty? do
   # add the student hash to the array
-    if name.start_with?("S") && name.size < 12
       students << {name: name, cohort: :november}
       puts "Now we have #{students.count} students"
-    end
+
   # get another name from the user
   name = gets.chomp
   end

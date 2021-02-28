@@ -19,7 +19,11 @@ def print(students)
    end
 end
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students".center(100)
+  if names.count < 2
+    puts "Overall, we have #{names.count} great student".center(100)
+  else
+    puts "Overall, we have #{names.count} great students".center(100)
+  end
 end
 
 def input_students
@@ -38,7 +42,12 @@ def input_students
       student_info[:cohort] = "n/a"
     end
     students << student_info
-    puts "Now we have #{students.count} students"
+    # conditional for 1 student ending
+    if students.count < 2
+      puts "Now we have #{students.count} student"
+    else
+      puts "Now we have #{students.count} students"
+    end
   # get another name from the user
     puts "Please enter the name of the student"
     name = gets.chomp

@@ -31,7 +31,8 @@ def input_students
   # get the first name
   puts "Please enter the name of the student"
   puts "To finish, just hit return twice"
-  name = gets.chomp.to_sym
+  name = gets
+  name = name[0...-1].to_sym
   # while the name is not empty, repeat this code
   while !name.empty? do
   # add the student hash to the array

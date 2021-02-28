@@ -3,9 +3,20 @@ def print_header
   puts "-------------".center(100)
 end
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)}".center(100)
-  end
+  students_by_cohorts = {}
+
+  students.map do |student|
+    name = student[:name]
+    cohort = student[:cohort]
+      if students_by_cohorts[cohort] == nil
+        students_by_cohorts[cohort] = [name]
+      else
+        students_by_cohorts[cohort].push(name)
+      end
+    end
+   students_by_cohorts.each do |k, v|
+     puts "#{k} cohort: #{v.join(", ")}".center(100)
+   end
 end
 def print_footer(names)
   puts "Overall, we have #{names.count} great students".center(100)
@@ -16,8 +27,7 @@ def input_students
   # get the first name
   puts "Please enter the name of the student"
   puts "To finish, just hit return twice"
-  puts "To re-type, type 'R'"
-  name = gets.chomp
+  name = gets.chomp.to_sym
   # while the name is not empty, repeat this code
   while !name.empty? do
   # add the student hash to the array

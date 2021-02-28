@@ -1,14 +1,18 @@
-def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+def print_header(students)
+  if !students.empty?
+    puts "The students of Villains Academy"
+    puts "-------------"
+  end
 end
 def print(students)
   students.each do |student|
     puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
-def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+def print_footer(students)
+  if !students.empty?
+    puts "Overall, we have #{students.count} great students"
+  end
 end
 
 def input_students
@@ -18,6 +22,7 @@ def input_students
   students = []
   # get the first name
   name = gets.chomp
+
   # while the name is not empty, repeat this code
   while !name.empty? do
   # add the student hash to the array
@@ -32,6 +37,6 @@ end
 
 students = input_students
 # nothing happens until we call the methods
-print_header
+print_header(students)
 print(students)
 print_footer(students)
